@@ -25,7 +25,6 @@ namespace DatingApp.Controllers
             this._repo = repo;
             this._config = config;
         }
-
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegistrationDto userForRegistrationDto)
         {
@@ -40,7 +39,8 @@ namespace DatingApp.Controllers
 
             var createdUser = await _repo.Register(userToCreate, userForRegistrationDto.Password);
 
-            return StatusCode(201);
+            var x = 5;
+            return Ok();
         }
 
         [HttpPost("login")]
